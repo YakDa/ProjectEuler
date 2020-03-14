@@ -94,4 +94,30 @@ public class LinkedList<T> {
 		return i;
 	}
 	
+	public void reverse() {
+		Node currNode = head;
+		Node tempHead;
+		Node prevNode = null;
+		
+		while(currNode.next != null) {
+			prevNode = currNode;
+			currNode = currNode.next;
+		}
+		prevNode.next = null;
+		currNode.next = prevNode;
+		tempHead = currNode;
+		
+		while(head.next != null) {
+			currNode = head;
+			while(currNode.next != null) {
+				prevNode = currNode;
+				currNode = currNode.next;
+			}
+			prevNode.next = null;
+			currNode.next = prevNode;
+		}
+		tail = prevNode;
+		head = tempHead;
+	}
+	
 }

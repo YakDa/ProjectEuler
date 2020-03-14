@@ -40,6 +40,16 @@ public class Test {
 		}
 		System.out.print("Size=" + intLinkedList.size());
 		
+		System.out.print("\n");
+		
+		intLinkedList.reverse();
+		currNode = intLinkedList.head;
+		while(currNode != null) {
+			System.out.print(currNode.data + " ");
+			currNode = currNode.next;
+		}
+		System.out.print("Size=" + intLinkedList.size());
+		
 		
 		
 
