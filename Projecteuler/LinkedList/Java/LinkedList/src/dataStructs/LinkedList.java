@@ -120,4 +120,30 @@ public class LinkedList<T> {
 		head = tempHead;
 	}
 	
+	public void reverseRecursive(Node head) {
+		Node currNode = head;
+		Node tempHead;
+		Node prevNode = null;
+		
+		while(currNode.next != null) {
+			prevNode = currNode;
+			currNode = currNode.next;
+		}
+		prevNode.next = null;
+		currNode.next = prevNode;
+		tempHead = currNode;
+		
+		while(head.next != null) {
+			currNode = head;
+			while(currNode.next != null) {
+				prevNode = currNode;
+				currNode = currNode.next;
+			}
+			prevNode.next = null;
+			currNode.next = prevNode;
+		}
+		tail = prevNode;
+		head = tempHead;
+	}
+	
 }
