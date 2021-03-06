@@ -3,6 +3,8 @@
  */
 package dataStructs;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * @author mingda.cai
  *
